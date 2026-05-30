@@ -1,0 +1,50 @@
+{
+  "venvPath": "/data/users/jashwanth/qwen-claude",
+  "venv": "venv",
+  "pythonVersion": "3.12",
+  "pythonPlatform": "Linux",
+
+  "include": [
+    "scripts"
+  ],
+  "exclude": [
+    "**/__pycache__"
+  ],
+
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "autoImportCompletions": true,
+
+  "reportMissingImports": "error",
+  "reportMissingTypeStubs": "none",
+
+  "reportUnknownMemberType": "none",
+  "reportUnknownVariableType": "none",
+  "reportUnknownArgumentType": "none",
+  "reportUnknownLambdaType": "none",
+  "reportUnknownParameterType": "none",
+
+  "reportMissingParameterType": "error",
+  "reportMissingTypeArgument": "warning",
+  "reportUntypedFunctionDecorator": "warning",
+  "reportUntypedClassDecorator": "warning",
+  "reportUntypedBaseClass": "warning",
+  "reportUntypedNamedTuple": "error",
+
+  "reportGeneralTypeIssues": "error",
+  "reportOptionalMemberAccess": "error",
+  "reportOptionalSubscript": "error",
+  "reportOptionalCall": "error",
+  "reportPossiblyUnboundVariable": "error",
+  "reportPrivateImportUsage": "warning",
+  "reportUnnecessaryComparison": "warning",
+  "reportUnnecessaryIsInstance": "warning",
+  "reportConstantRedefinition": "warning",
+  "reportInconsistentConstructor": "error",
+  "reportInvalidTypeVarUse": "error",
+  "reportSelfClsParameterName": "warning",
+  "reportImplicitStringConcatenation": "warning",
+  "reportUnusedImport": "warning",
+  "reportUnusedVariable": "warning",
+  "reportDuplicateImport": "warning"
+}

@@ -1,0 +1,63 @@
+{
+  // ── Interpreter ─────────────────────────────────────────────────────
+  // venv lives in the sibling "heavy" folder /data/users/jashwanth/qwen-claude/
+  // (kept off-laptop). Use an absolute path so VSCode finds it even though it's
+  // outside this workspace. On a laptop where this folder is scp'd, the venv
+  // won't exist — Pylance won't resolve imports there, which is expected.
+  "python.defaultInterpreterPath": "/data/users/jashwanth/qwen-claude/venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+
+  // ── Language server ────────────────────────────────────────────────
+  // Meta's VSCode fork uses `nuclide.pyls` (bundles Pyrefly) for language services.
+  // For custom venvs to work, also need `ms-python.ms-python-helper` (bridges
+  // ms-python's env selection into pyls). See:
+  // https://www.internalfb.com/wiki/Python_Tooling_in_VSCode%40meta/Enabling_the_pyls_Extension
+  // Setting `python.languageServer: None` disables ms-python's own server so pyls
+  // owns go-to-def / hover / autocomplete.
+  "python.languageServer": "None",
+
+  // ── Auto-complete behavior ─────────────────────────────────────────
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.tabCompletion": "on",
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "off",
+    "strings": "on"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "editor.suggest.preview": true,
+
+  // ── Format on save ─────────────────────────────────────────────────
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.rulers": [100]
+  },
+
+  // ── Jupyter / interactive cells ────────────────────────────────────
+  // `# %%` markers split a regular .py file into runnable cells.
+  // Shift+Enter runs the current cell in the Jupyter Interactive Window.
+  "jupyter.interactiveWindow.creationMode": "perFile",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.askForKernelRestart": false,
+  "jupyter.sendSelectionToInteractiveWindow": true,
+  "python.dataScience.alwaysScrollOnNewCell": true,
+  "notebook.output.scrolling": true,
+
+  // ── File handling ──────────────────────────────────────────────────
+  // Heavy folders (venv, models, data, etc.) live in the sibling qwen-claude/
+  // folder, not here, so we don't need to exclude them. Keep just the noisy
+  // Python build artifacts.
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/*.pyc": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true
+  }
+}

@@ -1,0 +1,23 @@
+# heavy stuff — stays on devserver, regenerable
+venv/
+models/
+data/
+eval-repos/
+
+# generated outputs — keep on devserver only
+logs/
+runs/
+
+# python junk
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# editor / OS junk
+.DS_Store
+.idea/
+*.swp
